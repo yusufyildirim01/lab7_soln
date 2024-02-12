@@ -62,12 +62,16 @@ Exercise 3A: Complete this implementation of an integer stack module.
 module IntListStack =
   struct
     exception EmptyStack
+		
+    (* Stacks will be implemented as integer lists with the newest
+    elements at the front of the list. *)
     type stack = int list
 
     (* empty -- An empty stack *)
     let empty : stack = []
 
-    (* push i s -- Adds an integer element `i` to the top of stack `s` *)
+    (* push i s -- Returns a stack like stack `s` but with integer
+       element `i` added to the top *)
     let push (i : int) (s : stack) : stack =
       i :: s
 

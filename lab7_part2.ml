@@ -85,13 +85,13 @@ the file `color.ml` to complete the exercises below.
 ........................................................................
 Exercise 2A: Replace the `0` in the expression below with an
 expression that extracts the red channel of the color named `Red`,
-thereby naming the result `red_channel`. The expression will be
+thereby naming the result `red_channel_value`. The expression will be
 constructed from values in the `Color` module.
 ......................................................................*)
 
-let red_channel : int =
+let red_channel_value : int =
   let open Color in
-  red (color_named Red) ;;
+  red_channel (color_named Red) ;;
 
 (* Without the local open, we get the slightly more verbose
 
@@ -133,9 +133,9 @@ compile `color.ml` and run `color.byte`.
       | Indigo
       | Violet ;;
     val to_color : int -> int -> int -> color ;;
-    val red : color -> int ;;
-    val green: color -> int ;;
-    val blue: color -> int ;;
+    val red_channel : color -> int ;;
+    val green_channel: color -> int ;;
+    val blue_channel: color -> int ;;
     val color_named: color_name -> color ;;
  *)
 

@@ -2,7 +2,8 @@
                               CS51 Lab 7
                           Modules & Functors
 
-  A simple interface for the values and types of color.ml.
+A simple interface for the values and types of color.ml. You should
+not change this file.  
  *)
 
 type color ;;
@@ -16,15 +17,15 @@ type color_name =
   | Indigo
   | Violet ;;
 
-(* to_color r g b -- Returns the `color` corresponding to the RGB values
-   given by `r`, `g`, and `b` *)
+(* to_color r g b -- Returns the `color` corresponding to the RGB
+   values given by `r`, `g`, and `b` *)
 val to_color : int -> int -> int -> color ;;
 
-(* red c / green c / blue c -- Returns the corresponding channel value
-   for the color `c` *)
-val red : color -> int ;;
-val green: color -> int ;;
-val blue: color -> int ;;
+(* red_channel c / green_channel c / blu_channel c -- Returns the
+   corresponding channel value for the color `c` *)
+val red_channel : color -> int ;;
+val green_channel: color -> int ;;
+val blue_channel: color -> int ;;
 
 (* color_named name -- Returns the `color` corresponding to the color
    `name` *)

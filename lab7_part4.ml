@@ -79,12 +79,14 @@ module Stack : STACK =
     (* empty -- An empty stack *)
     let empty : 'a stack = []
 
-    (* push i s -- Adds an element i to the top of stack s *)
+    (* push i s -- Returns a stack like stack `s` but with integer
+       element `i` added to the top *)
     let push (elt : 'a) (stk : 'a stack) : 'a stack =
       elt :: stk
 
-    (* pop_helper s -- Returns a pair of the top element of the
-       stack and a stack containing the remaining elements *)
+    (* pop_helper s -- Returns a pair of the top element of `s` and a
+       stack containing the remaining elements aftr removing the top
+       element *)
     let pop_helper (stk : 'a stack) : 'a * 'a stack =
       match stk with
       | [] -> raise EmptyStack

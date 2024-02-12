@@ -46,9 +46,9 @@ type color_name =
 let to_color (r : int) (g : int) (b : int) : color =
   r, g, b ;;
 
-let red   ( r, _g, _b : color) : int = r ;;
-let green (_r,  g, _b : color) : int = g ;;
-let blue  (_r, _g,  b : color) : int = b ;;
+let red_channel   ( r, _g, _b : color) : int = r ;;
+let green_channel (_r,  g, _b : color) : int = g ;;
+let blue_channel  (_r, _g,  b : color) : int = b ;;
 
 let color_named (name : color_name) : color =
   match name with
