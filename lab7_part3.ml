@@ -32,7 +32,9 @@ to hide, within a single module, various helper functions or
 implementation details that we (as the developer of a module) would
 rather not expose. In other words, it provides a rigid *abstraction
 barrier* that when deployed properly makes it impossible for a
-programmer using your module to violate desired invariants.
+programmer using your module to violate desired invariants. This
+abstraction barrier is a key tool toward satisfying the edicts of
+prevention and compartmentalization.
 
 Let's say we want to build a stack data structure. A stack is similar
 to a queue (as described in Section 12.2 of the textbook) except that
@@ -62,7 +64,7 @@ Exercise 3A: Complete this implementation of an integer stack module.
 module IntListStack =
   struct
     exception EmptyStack
-		
+                
     (* Stacks will be implemented as integer lists with the newest
     elements at the front of the list. *)
     type stack = int list
@@ -146,9 +148,9 @@ let invert_stack : IntListStack.stack -> IntListStack.stack =
 inverted with `invert_stack`? Let's try it.
 
 ........................................................................
-Exercise 3E: Write an expression using `IntListStack` methods to get the
-top value from `small_stack` inverted with `invert_stack` and name the
-result `bad_el`.
+Exercise 3E: Write an expression using `IntListStack` methods to get
+the top value from a `small_stack` inverted with `invert_stack` and
+name the result `bad_el`.
 ......................................................................*)
 
 let bad_el = IntListStack.top (invert_stack (small_stack ())) ;;

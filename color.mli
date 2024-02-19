@@ -21,12 +21,12 @@ type color_name =
    values given by `r`, `g`, and `b` *)
 val to_color : int -> int -> int -> color ;;
 
-(* red_channel c / green_channel c / blu_channel c -- Returns the
+(* red_channel c / green_channel c / blue_channel c -- Returns the
    corresponding channel value for the color `c` *)
 val red_channel : color -> int ;;
-val green_channel: color -> int ;;
-val blue_channel: color -> int ;;
+val green_channel : color -> int ;;
+val blue_channel : color -> int ;;
 
 (* color_named name -- Returns the `color` corresponding to the color
    `name` *)
-val color_named: color_name -> color ;;
+val color_named : color_name -> color ;;

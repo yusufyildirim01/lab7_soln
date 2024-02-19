@@ -22,12 +22,12 @@ files to complete all exercises:
 (*======================================================================
 Part 2: Files as modules
 
-A useful feature of OCaml is that it *automatically* wraps functions
-and values that are defined in a single file into a module named after
-that file. The module name is the name of the file with the first
-letter capitalized. This functionality is in addition to the manual
-definition of modules as you've just used in Part 1, and it is a
-convenient way of separating code into separate namespaces when
+A useful feature of OCaml is that it *automatically* wraps all of the
+functions and values that are defined in a single file into a module
+named after that file. The module name is the name of the file with
+the first letter capitalized. This functionality is in addition to the
+manual definition of modules as you've just used in Part 1, and it is
+a convenient way of separating code into separate namespaces when
 writing a large program.
 
 There are other source files included in this lab, other than the
@@ -51,7 +51,7 @@ the file `color.ml` to complete the exercises below.
        % ocamlbuild -use-ocamlfind lab7_part2.byte
        % ./lab7_part2.byte
 
-    The ocamlbuild command should automatically find modules that
+    The `ocamlbuild` command should automatically find modules that
     you've written that reside in the same directory as your source,
     compile those additional files, and link them to your compiled
     program. You can then access functions from those files under the
@@ -74,7 +74,7 @@ the file `color.ml` to complete the exercises below.
         # Color.color_named ;;
         - : Color.color_name -> int = <fun>
 
-    (Note the capitalized module name.)
+    (Note the capitalized module name, as discussed above.)
 
     Keep in mind however that the `#mod_use` and `#use` directives
     look only at their argument files, not at any corresponding `.mli`
@@ -118,10 +118,11 @@ Once you have `color.mli` implemented, you should still be able to
 compile `color.ml` and run `color.byte`.
 ......................................................................*)
 
-(* The module type for the `Color` module captures the interface we want
-   our color modules to obey. Your `color.mli` file should have the 
-   following types and values declared. If you have trouble getting this
-   to work, you can find our documented solution in `color.mli`.
+(* SOLUTION: The module type for the `Color` module captures the
+   interface we want our color modules to obey. Your `color.mli` file
+   should have the following types and values declared. If you have
+   trouble getting this to work, you can find our documented solution in
+   `color.mli`.
 
     type color ;;
     type color_name =
@@ -134,10 +135,10 @@ compile `color.ml` and run `color.byte`.
       | Violet ;;
     val to_color : int -> int -> int -> color ;;
     val red_channel : color -> int ;;
-    val green_channel: color -> int ;;
-    val blue_channel: color -> int ;;
-    val color_named: color_name -> color ;;
- *)
+    val green_channel : color -> int ;;
+    val blue_channel : color -> int ;;
+    val color_named : color_name -> color ;;
+   *)
 
 (*......................................................................
 Exercise 2C:
@@ -145,9 +146,9 @@ Exercise 2C:
 In the file `color.ml`, modify the implementation of a color module as
 you see fit. Make the design choices that you think would be best for a
 color module implementation. In particular, you should be able to come
-up with a solution that is *much* clearer and more transparent than the
-one currently in `color.ml`. (Frankly, I recommend throwing out the
-colorml contents entirely and starting over.)
+up with a solution that is *much* SIMPLER, clearer, and more transparent
+than the one currently in `color.ml`. (Frankly, I recommend throwing out
+the `color.ml` contents entirely and starting over.)
 
 To pass the unit tests, you'll want the RGB values for the colors in the
 `color_name` type to have the following values:
@@ -164,7 +165,7 @@ To pass the unit tests, you'll want the RGB values for the colors in the
 
 ......................................................................*)
 
-(* See the solution in `color.ml` *)
+(* SOLUTION: See the solution in `color.ml` *)
 
 (* Here's the payoff: A user who uses the `color` module, by virtue of
 having to stay within the `color.mli` interface, will not notice *any
