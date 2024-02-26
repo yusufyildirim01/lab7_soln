@@ -25,7 +25,7 @@ Part 1: Implementing Modules
 *Modules* are a way to package together and encapsulate types and values
 (including functions) into a single discrete unit.
 
-By applying a *signature* to a module, we guarantee that the module
+By applying a *signature* to a module, we guarante that the module
 implements at least the values and functions defined within it. The
 module may also implement more as well, for internal use, but only those
 specified in the signature will be exposed and available outside the
